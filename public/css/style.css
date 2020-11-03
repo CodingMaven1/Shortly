@@ -41,7 +41,8 @@ body::-moz-placeholder { /* Mozilla Firefox 19+ */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-	overflow: hidden;
+    overflow: hidden;
+    position: relative;
 }
 
 .Shortly--Title{
@@ -105,4 +106,16 @@ body::-moz-placeholder { /* Mozilla Firefox 19+ */
 
 .Shortly--Link:hover{
     color: blue;
+}
+
+.Shortly--Heart{
+    height: 2vh;
+}
+
+.Shortly--Subtitle{
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 40%;
+    margin-bottom: 5vh;
 }
