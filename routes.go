@@ -17,5 +17,7 @@ func AddRoutes(router *mux.Router) {
 
 	router.HandleFunc("/", RenderHome)
 
+	router.HandleFunc("/getshorturl", MakeShortURL).Methods("POST")
+
 	log.Println("Routes loaded")
 }
