@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-weight: 300;
+}
+body::-webkit-input-placeholder { /* WebKit browsers */
+	font-family: 'Source Sans Pro', sans-serif;
+	color:    white;
+	font-weight: 300;
+}
+body:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font-family: 'Source Sans Pro', sans-serif;
+	 color:    white;
+	 opacity:  1;
+	font-weight: 300;
+}
+body::-moz-placeholder { /* Mozilla Firefox 19+ */
+	font-family: 'Source Sans Pro', sans-serif;
+	 color:    white;
+	 opacity:  1;
+	font-weight: 300;
+}
+
+.Shortly{
+	background: #50a3a2;
+	background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+	background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+	background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+	background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	overflow: hidden;
+}
+
+.Shortly--Title{
+    font-size: 3rem;
+    font-weight: 400;
+    padding-bottom: 5vh;
+}
+
+.Shortly--Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Shortly--Input{
+    display: block;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 20vw;
+    min-width: 250px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+    
+.Shortly--Input:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Shortly--Input:focus{
+    background-color: white;
+    width: 30vw;
+    color: #53e3a6;
+}
+
+.Shortly--Btn{
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+    color: #53e3a6;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.Shortly--Link{
+    text-decoration: none;
+    margin-top: 6vh;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.Shortly--Link:hover{
+    color: blue;
+}
