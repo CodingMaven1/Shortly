@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/gorilla/mux"
+
 	"github.com/ventu-io/go-shortid"
 )
 
@@ -82,6 +84,31 @@ func MakeShortURL(res http.ResponseWriter, req *http.Request) {
 	}
 }
 
+// RedirectURL on getting the short URL
+func RedirectURL(res http.ResponseWriter, req *http.Request) {
+	httperror := ErrorResponse{
+		Code:    http.StatusInternalServerError,
+		Message: "There was some internal error.",
+	}
+	ctx := context.Background()
+	shortcode := mux.Vars(req)["shortcode"]
+	if shortcode == "" {
+		httperror.Code = http.StatusBadRequest
+		httperror.Message = "Parameter cannot be empty!"
+		respondBack(res, req, httperror)
+	} else {
+		url, err := Client.Get(ctx, shortcode).Result()
+		if url == "" || err != nil {
+			httperror.Code = http.StatusBadRequest
+			httperror.Message = "Invalid URL"
+			respondBack(res, req, httperror)
+		} else {
+			http.Redirect(res, req, url, http.StatusSeeOther)
+		}
+	}
+}
+
+// Helper functions
 func validURL(str string) bool {
 	u, err := url.Parse(str)
 	return err == nil && u.Scheme != "" && u.Host != ""
